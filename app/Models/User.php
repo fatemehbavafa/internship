@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'phone',
         'gender',
+        'role',
         'address',
         'province_id',
         'major_id',

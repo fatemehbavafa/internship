@@ -18,11 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('company_name')->nullable();
-            $table->string('username')->unique();
+            $table->string('username')->unique()->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phone');
+            $table->string('address');
+            $table->enum('role', ['admin', 'employee', 'company']);
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->foreignId('province_id')
                 ->nullable()
